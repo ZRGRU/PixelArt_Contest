@@ -18,29 +18,45 @@ Este projeto é um website estático desenvolvido para hospedar uma "Olimpíada 
 
 ## Estrutura de Arquivos e Pastas
 
-PixelArt_Contest/
-├── index.html # Página principal que lista as turmas
-├── gallery_template.html # Template HTML para todas as galerias de turma
-├── color_variables.css # Define as variáveis de cores globais
-├── main_style.css # CSS para a página principal (index.html)
-├── gallery_style.css # CSS para as galerias de turma (gallery_template.html)
-├── gallery_script.js # Lógica JavaScript principal para as galerias
-├── generate_image_list.py # Script Python para gerar as listas de imagens
-├── image_converter.py # (Opcional) Seu script utilitário para converter imagens
-├── .gitignore # Arquivos e pastas a serem ignorados pelo Git
-├── README.md # Este arquivo de documentação
-├── requeriments.txt # Arquivo de requerimentos python para rodar os scripts
+```text
+PIXELART_CONTEST/
+├── .venv/                     # Ambiente virtual Python (geralmente ignorado pelo Git)
+├── .vscode/                   # Configurações do VS Code (geralmente ignorado pelo Git)
 │
-├── 1A/ # Exemplo de pasta para a Turma 1A
-│ ├── image_list.js # Lista de imagens para a Turma 1A (gerado pelo Python)
-│ └── img/ # Subpasta contendo os arquivos de imagem da Turma 1A
-│ ├── desenho_aluno1.png
-│ └── ...
-├── 1B/
-│ ├── image_list.js
-│ └── img/
-│ └── ...
-└── ... (outras pastas de turma seguindo o mesmo padrão)
+├── 1A/                        # Exemplo de pasta para a Turma 1A
+│   ├── img/                   # Subpasta contendo os arquivos de imagem da Turma 1A
+│   │   ├── desenho_aluno1.png # Exemplo de arquivo de imagem
+│   │   └── ...                # Outros arquivos de imagem
+│   └── image_list.js          # Lista de imagens para a Turma 1A (gerado por image_list_generator.py)
+├── 1B/                        # (Estrutura similar para outras turmas...)
+│   ├── img/
+│   └── image_list.js
+├── 1C/                        # (Estrutura similar para outras turmas...)
+│   ├── img/
+│   └── image_list.js
+├── 2A/                        # (Pasta para a Turma 2A, contendo img/ e image_list.js)
+├── 2B/                        # (...)
+├── 3A/
+├── 3B/
+├── 4A/
+├── 4B/
+├── 4C/
+├── 5A/
+├── 5B/
+│
+├── .gitignore                 # Arquivos e pastas a serem ignorados pelo Git
+├── color_variables.css        # Define as variáveis de cores globais
+├── gallery_script.js          # Lógica JavaScript principal para as galerias
+├── gallery_style.css          # CSS para as galerias de turma (gallery_template.html)
+├── gallery_template.html      # Template HTML para todas as galerias de turma
+├── image_list_generator.py    # Script Python para gerar as listas de imagens por turma
+├── imgConverter.py            # Script Python utilitário para conversão de imagens (ex: HEIC para PNG)
+├── index.html                 # Página principal que lista as turmas
+├── LICENSE.md                 # Arquivo de licença do projeto (ex: MIT)
+├── main_style.css             # CSS para a página principal (index.html)
+├── README.md                  # Este arquivo de documentação
+└── requirements.txt           # Lista de dependências Python para os scripts
+```
 
 ## Tecnologias Utilizadas
 
