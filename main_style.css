@@ -1,50 +1,154 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+/* drawing_contest/main_style.css */
+
+/* Definição das Variáveis de Cor Globais */
+:root {
+  --color-primary: #4caf50; /* Verde principal (cabeçalho, destaques) */
+  --color-primary-darker: #3e8e41; /* Variação mais escura do primário para hovers */
+  --color-secondary: #ff9800; /* Laranja como cor secundária (opcional, para botões ou alertas) */
+  --color-background: #f4f7f6; /* Fundo geral da página (cinza muito claro) */
+  --color-surface: #ffffff; /* Fundo de superfícies como cards (branco) */
+  --color-surface-hover: #f9f9f9; /* Fundo de superfície no hover */
+  --color-text-primary: #333333; /* Cor de texto principal (escura) */
+  --color-text-secondary: #555555; /* Cor de texto secundária (um pouco mais clara) */
+  --color-text-on-primary: #ffffff; /* Cor de texto sobre fundos primários (branco) */
+  --color-text-on-dark: #cccccc; /* Cor de texto clara para fundos escuros (rodapé) */
+  --color-border: #e0e0e0; /* Cor para bordas sutis */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* Cor base para sombras */
+  --color-shadow-hover: rgba(0, 0, 0, 0.15); /* Cor de sombra no hover */
 }
 
+/* Reset básico e configurações globais */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(
+    --color-background
+  ); /* Usa a variável de cor de fundo */
+  color: var(
+    --color-text-primary
+  ); /* Usa a variável de cor de texto principal */
+  line-height: 1.6;
+}
+
+/* Estilo do Cabeçalho Principal */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    margin-bottom: 30px;
+  background-color: var(--color-primary); /* Usa a variável de cor primária */
+  color: var(
+    --color-text-on-primary
+  ); /* Usa a variável de texto sobre primário */
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px var(--color-shadow); /* Usa a variável de cor de sombra */
 }
 
 header h1 {
-    margin: 0;
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+  font-weight: 600;
 }
 
-.folder-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    justify-content: center; /* Centraliza os links se não preencherem a linha */
+header p {
+  margin: 0;
+  font-size: 1.1em;
+  opacity: 0.9; /* Mantido, pois não é uma cor direta */
 }
 
-.folder-link {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1em;
-    padding: 20px 30px;
-    background-color: #5cb85c; /* Verde */
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Container para a lista de turmas */
+.class-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.folder-link:hover {
-    background-color: #4cae4c; /* Verde mais escuro */
-    transform: translateY(-2px);
+/* Estilo individual de cada link de turma */
+.class-link {
+  background-color: var(
+    --color-surface
+  ); /* Usa a variável de cor de superfície */
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    background-color 0.2s, color 0.2s;
+  border: 1px solid var(--color-border); /* Usa a variável de cor de borda */
 }
 
+.class-link:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 12px var(--color-shadow-hover); /* Usa a variável de sombra no hover */
+  background-color: var(
+    --color-surface-hover
+  ); /* Usa a variável de superfície no hover */
+  color: var(
+    --color-primary
+  ); /* Usa a variável de cor primária para o texto no hover */
+}
+
+/* Estilo do Rodapé */
 footer {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #333;
-    color: #aaa;
-    font-size: 0.9em;
+  background-color: var(
+    --color-text-primary
+  ); /* Usando o cinza escuro do texto como fundo */
+  color: var(
+    --color-text-on-dark
+  ); /* Usa a variável de texto para fundos escuros */
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 0.9em;
+}
+
+/* Responsividade (mantida como antes, pois não mexe diretamente com as cores definidas nas variáveis) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .class-list-container {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .class-link {
+    font-size: 1.1em;
+    padding: 15px 25px;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  .class-list-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .class-link {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+
+  .class-link:last-child {
+    margin-bottom: 0;
+  }
 }

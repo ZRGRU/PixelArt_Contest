@@ -1,0 +1,73 @@
+<!-- drawing_contest/gallery_template.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <!-- Idioma da página definido para Português do Brasil -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria de Desenhos</title>
+    <!-- Título genérico, será atualizado pelo JS -->
+    <link rel="stylesheet" href="gallery_style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back-button">← Voltar para Todas as Turmas</a>
+      <!-- O título da galeria será preenchido pelo JavaScript com o nome da turma -->
+      <h1 id="galleryPageTitle">Carregando Galeria...</h1>
+    </header>
+
+    <main>
+      <div class="gallery-grid" id="imageGalleryContainer">
+        <!-- As imagens serão inseridas aqui -->
+      </div>
+
+      <div
+        id="winnerDisplayArea"
+        class="winner-announcement"
+        style="display: none"
+      >
+        <h2>Desenho Vencedor!</h2>
+        <img id="winnerImageElement" src="" alt="Desenho Vencedor" />
+        <!-- O 'alt' também pode ser dinâmico se o nome do arquivo for amigável -->
+        <p id="winnerNameText"></p>
+      </div>
+
+      <div class="gallery-controls">
+        <button id="voteProcessButton" class="action-button vote-button">
+          Votar Nesta Rodada
+        </button>
+        <button
+          id="resetVotingButton"
+          class="action-button reset-button"
+          style="display: none"
+        >
+          Reiniciar Votação da Turma
+        </button>
+
+        <div class="json-io-controls" style="margin-top: 15px">
+          <button id="exportProgressButton" class="action-button export-button">
+            Exportar Progresso (JSON)
+          </button>
+          <button id="triggerImportButton" class="action-button import-button">
+            Importar Progresso (JSON)
+          </button>
+          <input
+            type="file"
+            id="importFileInput"
+            accept=".json"
+            style="display: none"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Clique em "+" para votar em um desenho. Você pode dar múltiplos votos
+        para um mesmo desenho se desejar.
+      </p>
+    </footer>
+
+    <script src="gallery_script.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 import os
 import json # Ou apenas strings diretas para o array JS
 
-def gerar_lista_js_para_pasta(caminho_pasta_turma, nome_arquivo_js="imagens.js"):
+def gerar_lista_js_para_pasta(caminho_pasta_turma, nome_arquivo_js="image_list.js"):
     pasta_img = os.path.join(caminho_pasta_turma, "img")
     arquivos_imagem = []
     if os.path.isdir(pasta_img):
