@@ -1,5 +1,6 @@
-// drawing_contest/gallery_script.js
+// PixelArt_Contest/gallery_script.js
 
+// Script para gerenciar a galeria de desenhos e o processo de votação
 document.addEventListener("DOMContentLoaded", () => {
   // Elementos do DOM
   const galleryPageTitleElement = document.getElementById("galleryPageTitle");
