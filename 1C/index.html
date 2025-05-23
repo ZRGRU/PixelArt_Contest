@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria de Desenhos - Turma 1° C</title>
+    <!-- O JS pode mudar "Turma X" -->
+    <link rel="stylesheet" href="../galery_style.css" />
+    <!-- Link para o CSS compartilhado -->
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="back-button"
+        >← Voltar para Todas as Turmas</a
+      >
+      <h1 id="galleryTitle">Galeria de Desenhos - Turma 1° C</h1>
+    </header>
+
+    <main>
+      <div class="gallery" id="photoGallery">
+        <!-- As fotos serão carregadas aqui pelo JavaScript -->
+      </div>
+
+      <div
+        id="winnerAnnouncement"
+        class="winner-announcement"
+        style="display: none"
+      >
+        <h2>Desenho Vencedor!</h2>
+        <img id="winnerImage" src="" alt="Desenho Vencedor" />
+        <p id="winnerName"></p>
+      </div>
+
+      <div class="controls">
+        <button id="voteButton" class="action-button vote-button">
+          Votar Nesta Rodada
+        </button>
+        <button
+          id="resetButton"
+          class="action-button reset-button"
+          style="display: none"
+        >
+          Reiniciar Votação da Turma
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Clique em "+" para votar em um desenho. Você pode dar múltiplos votos
+        para um mesmo desenho se desejar.
+      </p>
+    </footer>
+
+    <!-- O SCRIPT DEVE VIR DEPOIS DOS ELEMENTOS HTML -->
+    <script src="imagens.js"></script>
+    <!-- Carrega a lista de imagens específica da turma -->
+    <script src="../galery_script.js"></script>
+    <!-- Link para o JS compartilhado -->
+  </body>
+</html>

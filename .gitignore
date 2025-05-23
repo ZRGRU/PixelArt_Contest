@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Node/JavaScript
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Distribution/Build
+dist/
+build/
+*.min.js
+*.min.css
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Media and assets (if you want to track them)
+# Uncomment if you don't want to track these files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+
+# System Files
+Thumbs.db
+.DS_Store
