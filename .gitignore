@@ -36,11 +36,11 @@ logs/
 
 # Media and assets (if you want to track them)
 # Uncomment if you don't want to track these files
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.ico
+# *.png
+# *.jpg
+# *.jpeg
+# *.gif
+# *.ico
 
 # System Files
 Thumbs.db
