@@ -1,0 +1,72 @@
+/* drawing_contest/color_variables.css */
+/* Define as variáveis de cores globais para o projeto */
+
+:root {
+    /* Cores Claras e Neutras */
+    --color-white: #ffffff;              /* Branco puro */
+    --color-light-yellow: #fffcae;       /* Amarelo muito claro / Creme */
+    --color-bright-yellow: #fff803;      /* Amarelo vibrante / Limão */
+    --color-light-gray: #cececd;         /* Cinza claro */
+    --color-medium-gray: #949392;        /* Cinza médio */
+
+    /* Cores Escuras e Destaque */
+    --color-dark-blue: #15498e;          /* Azul escuro (corporativo/sério) */
+    --color-dark-gray: #3e3e3d;          /* Cinza escuro / Grafite */
+    --color-black: #000000;              /* Preto puro */
+
+    /* -------------------------------------------------------------------- */
+    /* Variáveis Semânticas (Como você poderia usá-las no seu tema)      */
+    /* Estas são sugestões baseadas nas cores fornecidas. Ajuste conforme   */
+    /* a função de cada cor no seu design.                                */
+    /* -------------------------------------------------------------------- */
+
+    /* Cores de Fundo */
+    --theme-background-primary: var(--color-white);       /* Fundo principal da página */
+    --theme-background-secondary: var(--color-light-gray);/* Fundo para seções secundárias ou cards sutis */
+    --theme-background-accent: var(--color-light-yellow); /* Fundo para áreas de destaque ou notas */
+
+    /* Cores de Superfície (Cards, Modais, etc.) */
+    --theme-surface-primary: var(--color-white);
+    --theme-surface-secondary: var(--color-light-yellow); /* Pode ser usado para um card destacado */
+
+    /* Cores de Texto */
+    --theme-text-primary: var(--color-dark-gray);         /* Texto principal sobre fundos claros */
+    --theme-text-secondary: var(--color-medium-gray);       /* Texto secundário, menos importante */
+    --theme-text-on-dark-bg: var(--color-light-gray);     /* Texto para usar sobre fundos escuros (ex: azul escuro) */
+    --theme-text-on-accent-bg: var(--color-dark-gray);    /* Texto para usar sobre o amarelo vibrante (se precisar de contraste) */
+    --theme-text-link: var(--color-dark-blue);            /* Cor para links */
+    --theme-text-link-hover: var(--color-black);          /* Cor para links no hover (poderia ser uma variação do azul) */
+
+    /* Cores de Borda */
+    --theme-border-primary: var(--color-medium-gray);
+    --theme-border-secondary: var(--color-light-gray);
+
+    /* Cores de Destaque e Ação */
+    --theme-accent-primary: var(--color-dark-blue);       /* Botões primários, ícones importantes */
+    --theme-accent-secondary: var(--color-bright-yellow); /* Destaques, avisos, botões secundários chamativos */
+    --theme-text-on-accent-primary: var(--color-white);   /* Texto sobre o azul escuro */
+    --theme-text-on-accent-secondary: var(--color-dark-gray); /* Texto sobre o amarelo vibrante (precisa de bom contraste) */
+
+    /* Cores de Feedback (opcional, se precisar) */
+    /* --theme-success: #28a745; (Exemplo, não das suas cores) */
+    /* --theme-danger: #dc3545;  (Exemplo, não das suas cores) */
+    /* --theme-warning: var(--color-bright-yellow); (Poderia ser usado para avisos) */
+
+    /* Cores de Sombra */
+    --theme-shadow-color: rgba(var(--color-black-rgb, 0,0,0), 0.1); /* Sombra sutil, note o fallback para preto se --color-black-rgb não for definido */
+}
+
+/*
+   Opcional: Se você quiser usar rgba() com suas variáveis de cor para sombras
+   ou overlays, você pode definir as componentes RGB separadamente, embora
+   CSS mais moderno permita `rgba(var(--color-black), 0.1)` na maioria dos casos.
+   Se precisar de compatibilidade mais antiga ou controle fino:
+
+:root {
+    ...
+    --color-black-rgb: 0, 0, 0;
+    --color-dark-gray-rgb: 62, 62, 61;
+    ...
+    --theme-shadow-color: rgba(var(--color-black-rgb), 0.1);
+}
+*/

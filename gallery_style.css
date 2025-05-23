@@ -1,82 +1,25 @@
 /* drawing_contest/gallery_style.css */
-
-/*
-    Reutilizando e definindo variáveis de cor.
-    Você pode ter um arquivo CSS separado só para variáveis se o projeto crescer,
-    ou redefinir/adicionar variáveis específicas para a galeria aqui se necessário.
-    Por agora, vamos assumir que as variáveis definidas em main_style.css (ou
-    um arquivo global de variáveis) estão disponíveis, ou podemos redefini-las
-    aqui para o contexto da galeria. Para este exemplo, vou referenciar
-    as variáveis como se estivessem globalmente disponíveis (pense que `:root`
-    em main_style.css as tornou acessíveis). Se você não tiver um CSS global
-    de variáveis carregado ANTES deste, você precisaria copiar o bloco :root
-    de main_style.css para o topo deste arquivo também.
-*/
-
-/* Se este arquivo for carregado independentemente ou se você quiser
-   ter um conjunto de variáveis ligeiramente diferente para a galeria,
-   descomente e ajuste este bloco :root. Caso contrário, ele usará
-   as variáveis do :root já carregado (ex: de main_style.css se ambos
-   estiverem na mesma página, o que não é o caso aqui, então é melhor
-   incluí-las ou ter um arquivo de variáveis separado importado).
-
-   Para simplificar e garantir que funcione, vamos REPETIR as variáveis aqui.
-   Em um projeto maior, você gerenciaria isso de forma mais centralizada.
-*/
-:root {
-  --color-primary: #4caf50; /* Verde principal */
-  --color-primary-darker: #3e8e41;
-  --color-secondary: #ff9800; /* Laranja secundário (ex: botões de importação) */
-  --color-accent: #007bff; /* Azul para botões de ação como "Votar" */
-  --color-accent-darker: #0056b3;
-  --color-danger: #dc3545; /* Vermelho para botões de reset/perigo */
-  --color-danger-darker: #c82333;
-  --color-info: #17a2b8; /* Azul claro para botões de exportação/info */
-  --color-info-darker: #138496;
-
-  --color-background: #e9e9e9; /* Fundo da página da galeria (um pouco mais escuro que o principal) */
-  --color-surface: #ffffff; /* Fundo dos itens da galeria, controles (branco) */
-  --color-surface-alt: #f8f9fa; /* Fundo alternativo (ex: rodapé) */
-  --color-text-primary: #333333;
-  --color-text-on-primary: #ffffff;
-  --color-text-on-accent: #ffffff;
-  --color-text-on-danger: #ffffff;
-  --color-text-on-info: #ffffff;
-  --color-text-on-secondary: #212529; /* Texto escuro para fundo laranja/amarelo */
-  --color-border: #dddddd;
-  --color-border-light: #dee2e6;
-  --color-shadow: rgba(0, 0, 0, 0.1);
-
-  --color-success-bg: #d4edda; /* Fundo para anúncio de vencedor */
-  --color-success-text: #155724; /* Texto para anúncio de vencedor */
-  --color-success-border: #c3e6cb; /* Borda para anúncio de vencedor */
-
-  --color-button-default-bg: #f0f0f0;
-  --color-button-default-border: #cccccc;
-  --color-button-default-text: #333333;
-  --color-button-default-bg-hover: #e0e0e0;
-}
+/* Este arquivo assume que color_variables.css foi carregado ANTES dele. */
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
+  background-color: var(
+    --theme-background-secondary
+  ); /* Usando um fundo ligeiramente diferente para a galeria */
+  color: var(--theme-text-primary);
 }
 
 header {
-  background-color: var(
-    --color-primary
-  ); /* Cor primária para o cabeçalho da galeria */
-  color: var(--color-text-on-primary);
+  background-color: var(--theme-accent-primary); /* Ex: Azul escuro */
+  color: var(--theme-text-on-accent-primary); /* Ex: Branco */
   padding: 15px 20px;
   text-align: center;
   position: relative;
-  box-shadow: 0 1px 3px var(--color-shadow);
+  box-shadow: 0 1px 3px var(--theme-shadow-color);
 }
 
 header h1 {
-  /* Referencia o ID 'galleryPageTitle' do HTML */
   margin: 0;
   font-size: 1.8em;
 }
@@ -86,11 +29,16 @@ header h1 {
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
-  color: var(--color-text-on-primary);
+  color: var(--theme-text-on-accent-primary);
   text-decoration: none;
   font-size: 1em;
   padding: 8px 12px;
-  background-color: rgba(0, 0, 0, 0.2); /* Um overlay semi-transparente */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Overlay, pode ser mantido ou usar uma var se preferir */
   border-radius: 5px;
   transition: background-color 0.2s;
 }
@@ -103,7 +51,6 @@ main {
 }
 
 .gallery-grid {
-  /* Referencia o ID 'imageGalleryContainer' do HTML */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -111,18 +58,18 @@ main {
 }
 
 .photo-item {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background-color: var(--theme-surface-primary); /* Ex: Branco */
+  border: 1px solid var(--theme-border-primary); /* Ex: Cinza médio */
   border-radius: 8px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 2px 5px var(--color-shadow);
+  box-shadow: 0 2px 5px var(--theme-shadow-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .photo-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px var(--color-shadow);
+  box-shadow: 0 4px 10px var(--theme-shadow-color); /* Pode usar uma var(--theme-shadow-hover-color) se definida */
 }
 
 .photo-item img {
@@ -137,21 +84,15 @@ main {
   font-weight: bold;
   margin-bottom: 10px;
   word-wrap: break-word;
-  color: var(--color-text-primary);
-}
-
-.counter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  color: var(--theme-text-primary);
 }
 
 .counter button {
-  background-color: var(--color-button-default-bg);
-  border: 1px solid var(--color-button-default-border);
-  color: var(--color-button-default-text);
+  background-color: var(
+    --theme-surface-secondary
+  ); /* Ex: Amarelo claro ou cinza claro */
+  border: 1px solid var(--theme-border-secondary); /* Ex: Cinza claro */
+  color: var(--theme-text-primary);
   font-size: 1.2em;
   width: 30px;
   height: 30px;
@@ -161,14 +102,16 @@ main {
 }
 
 .counter button:hover {
-  background-color: var(--color-button-default-bg-hover);
+  background-color: var(
+    --theme-border-primary
+  ); /* Escurece um pouco o fundo do botão */
 }
 
 .counter input[type="number"] {
   width: 50px;
   text-align: center;
   font-size: 1em;
-  border: 1px solid var(--color-button-default-border);
+  border: 1px solid var(--theme-border-secondary);
   border-radius: 4px;
   padding: 5px;
   -moz-appearance: textfield;
@@ -180,42 +123,45 @@ main {
 }
 
 .gallery-controls {
-  /* Container para os botões de ação principais */
   text-align: center;
   margin-bottom: 20px;
 }
 
 .action-button {
-  /* Classe base para todos os botões de ação */
   padding: 12px 25px;
   font-size: 1.1em;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin: 5px 10px; /* Adiciona margem para quebrar linha melhor */
+  margin: 5px 10px;
 }
 
 .vote-button {
-  /* ID 'voteProcessButton' */
-  background-color: var(--color-accent);
-  color: var(--color-text-on-accent);
+  background-color: var(--theme-accent-primary); /* Ex: Azul escuro */
+  color: var(--theme-text-on-accent-primary); /* Ex: Branco */
 }
 .vote-button:hover {
-  background-color: var(--color-accent-darker);
+  background-color: var(
+    --color-dark-blue-darker,
+    #10386e
+  ); /* Fallback se não tiver uma var específica para hover */
 }
 
 .reset-button {
-  /* ID 'resetVotingButton' */
-  background-color: var(--color-danger);
-  color: var(--color-text-on-danger);
+  background-color: var(
+    --color-danger,
+    #dc3545
+  ); /* Usando uma cor de perigo, fallback se não existir */
+  color: var(
+    --theme-text-on-accent-primary
+  ); /* Assumindo que o texto será branco */
 }
 .reset-button:hover {
-  background-color: var(--color-danger-darker);
+  background-color: var(--color-danger-darker, #c82333);
 }
 
 .json-io-controls {
-  /* Container para botões de exportar/importar */
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -223,48 +169,45 @@ main {
 }
 
 .export-button {
-  /* ID 'exportProgressButton' */
-  background-color: var(--color-info);
-  color: var(--color-text-on-info);
+  background-color: var(
+    --color-info,
+    #17a2b8
+  ); /* Usando uma cor de informação */
+  color: var(--theme-text-on-accent-primary);
 }
 .export-button:hover {
-  background-color: var(--color-info-darker);
+  background-color: var(--color-info-darker, #138496);
 }
 
 .import-button {
-  /* ID 'triggerImportButton' */
-  background-color: var(--color-secondary);
-  color: var(--color-text-on-secondary);
+  background-color: var(--theme-accent-secondary); /* Ex: Amarelo vibrante */
+  color: var(
+    --theme-text-on-accent-secondary
+  ); /* Ex: Cinza escuro para contraste */
 }
 .import-button:hover {
-  background-color: var(
-    --color-secondary-darker,
-    #e08600
-  ); /* Fallback se a var não existir */
+  background-color: var(--color-bright-yellow-darker, #d9d303); /* Fallback */
 }
 
 .winner-announcement {
-  /* ID 'winnerDisplayArea' */
   text-align: center;
   padding: 20px;
-  background-color: var(--color-success-bg);
-  color: var(--color-success-text);
-  border: 1px solid var(--color-success-border);
+  background-color: var(--theme-background-accent); /* Ex: Amarelo claro */
+  color: var(--theme-text-primary); /* Texto principal sobre o amarelo claro */
+  border: 1px solid var(--theme-border-primary); /* Borda cinza média */
   border-radius: 8px;
-  margin: 30px auto; /* Adiciona margem superior/inferior e centraliza */
-  max-width: 600px; /* Limita a largura do anúncio */
+  margin: 30px auto;
+  max-width: 600px;
 }
 
 .winner-announcement img {
-  /* ID 'winnerImageElement' */
   max-width: 90%;
   max-height: 400px;
   border-radius: 8px;
   margin-top: 15px;
-  border: 3px solid var(--color-success-text); /* Borda com a cor do texto de sucesso */
+  border: 3px solid var(--theme-accent-primary); /* Borda com a cor de destaque primária */
 }
 .winner-announcement p {
-  /* ID 'winnerNameText' */
   font-size: 1.2em;
   font-weight: bold;
   margin-top: 10px;
@@ -273,23 +216,25 @@ main {
 footer {
   text-align: center;
   padding: 15px;
-  background-color: var(--color-surface-alt);
-  border-top: 1px solid var(--color-border-light);
+  background-color: var(
+    --theme-surface-primary
+  ); /* Fundo branco para o rodapé da galeria */
+  border-top: 1px solid var(--theme-border-secondary); /* Borda cinza clara */
   font-size: 0.9em;
-  color: var(--color-text-secondary);
+  color: var(--theme-text-secondary);
   margin-top: 30px;
 }
 
-/* Responsividade para os botões de controle */
+/* Responsividade (mantida como antes) */
 @media (max-width: 600px) {
   .gallery-controls,
   .json-io-controls {
-    flex-direction: column; /* Empilha os botões */
+    flex-direction: column;
     align-items: center;
   }
   .action-button {
-    width: 80%; /* Faz os botões ocuparem mais largura */
+    width: 80%;
     max-width: 300px;
-    margin: 8px 0; /* Ajusta margens para empilhamento vertical */
+    margin: 8px 0;
   }
 }
